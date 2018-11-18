@@ -1,15 +1,14 @@
 {
-  "name": "testapp1",
+  "name": "nodehttpservermoduleexample",
   "version": "1.0.0",
-  "description": "testing node js",
+  "description": "HTTP Server Example Programs",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Abhijith",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4",
     "file-system": "^2.2.2",
     "http": "0.0.0"
   }
