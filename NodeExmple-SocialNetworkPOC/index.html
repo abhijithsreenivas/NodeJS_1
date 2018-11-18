@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title> Node REST APP </title>
+
+</head>
+
+<body>
+      <form action="status/new" method="post">
+        <input name="name" placeholder="Your name...">
+        <textarea name="statusArea" placeholder="Please Put Your Status Here" rows="8" cols="80"></textarea>
+        <input type="submit" name="submit" value="Submit">
+
+      </form>
+
+
+      <br/>
+      <br/>
+      <h2> Previuous FB Status  </h2>
+      <p id="feed-name"></p>
+      <p id="feed-status"> </p>
+      <script type="text/javascript">
+          window.onload = function(){
+              console.log("Dom content Loaded.");
+
+
+              fetch("/status").then(function(res){
+                    res.json().then(function (data){
+                      console.log(data);
+                      for(let i=0;i<data.length;i++){
+                      document.getElementById("feed-name").appendChild(document.createTextNode(JSON.stringify(data[i])));
+            //          document.getElementById("feed-name").appendChild(document.createTextNode(data[i].status));
+                      }
+            //          document.getElementById("feed-status").innerHTML = data.status;
+                    })
+              });
+          }
+      </script>
+</body>
+
+</html>
